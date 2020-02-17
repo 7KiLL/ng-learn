@@ -15,4 +15,5 @@ export class AppComponent {
   addPost($event: Post) {
     this.posts.unshift($event);
   }
+
 }
