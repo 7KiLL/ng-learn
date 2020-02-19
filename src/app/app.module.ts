@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import { PostFormComponent } from './components/post/post-form/post-form.component';
-import { PostViewComponent } from './components/post/post-view/post-view.component';
-import { AppStyleDirective } from './directives/app-style.directive';
+import { TodoComponent } from './components/todo/todo.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostFormComponent,
-    PostViewComponent,
-    AppStyleDirective,
+    TodoComponent,
+
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

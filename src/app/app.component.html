@@ -1,4 +1,10 @@
 <div id="wrapper">
-  <app-post-form (handleAdd)="addPost($event)"></app-post-form>
-  <app-post-view [posts]="posts"></app-post-view>
+  <div class="forms">
+    <h1>My quality TODO app</h1>
+    <input type="text" [(ngModel)]="title">
+    <button class="btn" (click)="addTodo()">Send</button>
+  </div>
+  <div class="view">
+      <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  </div>
 </div>
