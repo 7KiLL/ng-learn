@@ -18,4 +18,10 @@ export class TodoService {
     const URL = id ? this.todoResource + id : this.todoResource;
     return this.http.get<Todo|Todo[]>(URL);
   }
+  create(todo: Todo): Observable<Todo> {
+    return this.http.post<Todo>(this.todoResource, todo);
+  }
+  delete(id: number) {
+    return this.http.delete(`${this.todoResource}${id}`);
+  }
 }

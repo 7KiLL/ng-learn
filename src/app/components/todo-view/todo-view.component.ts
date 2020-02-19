@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {Todo} from './interfaces/todo';
-import {TodoService} from './services/todo.service';
+import { Component, OnInit } from '@angular/core';
+import {Todo} from '../../interfaces/todo';
+import {TodoService} from '../../services/todo.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-todo-view',
+  templateUrl: './todo-view.component.html',
+  styleUrls: ['./todo-view.component.scss']
 })
-export class AppComponent implements OnInit {
+export class TodoViewComponent implements OnInit {
 
   todos: Todo[] = [];
   title = '';
@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.todoService.get()
       .subscribe((res: Todo[]) => {
-      this.todos = res;
-    });
+        this.todos = res;
+      });
   }
 
 
