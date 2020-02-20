@@ -13,11 +13,16 @@ export class TodoComponent implements OnInit {
 
   @Input() todo: Todo;
   @Output() itemRemoved: EventEmitter<number> = new EventEmitter<number>();
+  @Output() itemCompleted: EventEmitter<number> = new EventEmitter<number>();
 
   ngOnInit() {
   }
 
   removeItem() {
     this.itemRemoved.emit(this.todo.id);
+  }
+
+  completeItem() {
+    this.itemCompleted.emit(this.todo.id);
   }
 }

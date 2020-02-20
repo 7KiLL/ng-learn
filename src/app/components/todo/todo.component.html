@@ -1,6 +1,7 @@
 <div class="card">
-  <h3 class="card__title">
-    {{todo.title}}
+  <h3 class="card__title" [class.completed]="todo.completed">
+    {{todo.title | titlecase}}
   </h3>
-  <div class="btn btn-danger" (click)="removeItem()">Delete</div>
+  <button class="btn btn-danger" (click)="removeItem()">Delete</button>
+  <button class="btn btn-success" (click)="completeItem()">Complete</button>
 </div>

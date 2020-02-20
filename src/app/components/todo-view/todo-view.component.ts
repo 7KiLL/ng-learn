@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Todo} from '../../interfaces/todo';
 import {TodoService} from '../../services/todo.service';
+import assign from 'lodash/assign';
 
 @Component({
   selector: 'app-todo-view',
@@ -25,7 +26,8 @@ export class TodoViewComponent implements OnInit {
 
   addTodo() {
     const todo: Todo = {
-      title: this.title
+      title: this.title,
+      completed: false
     };
     this.todoService.create(todo).subscribe(res => {
       this.todos.push(res);
@@ -36,5 +38,14 @@ export class TodoViewComponent implements OnInit {
     this.todoService.delete($event).subscribe(res => {
       this.todos = this.todos.filter(t => t.id !== $event);
     });
+  }
+
+  completeItem($event: number) {
+    this.todoService.update($event)
+      .subscribe(res => {
+        const updatedIndex = this.todos.findIndex(t => t.id === $event);
+
+        this.todos[updatedIndex] = assign(this.todos[updatedIndex], res);
+      });
   }
 }

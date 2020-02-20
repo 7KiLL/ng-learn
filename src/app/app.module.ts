@@ -22,7 +22,7 @@ import { TodoViewComponent } from './components/todo-view/todo-view.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

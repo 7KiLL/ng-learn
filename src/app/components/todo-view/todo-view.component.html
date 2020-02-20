@@ -8,6 +8,8 @@
     <app-todo *ngFor="let todo of todos"
               [todo]="todo"
               (itemRemoved)="removeItem($event)"
+              (itemCompleted)="completeItem($event)"
+
     ></app-todo>
   </div>
 </div>

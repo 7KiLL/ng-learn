@@ -25,7 +25,8 @@ export class AppComponent implements OnInit {
 
   addTodo() {
     const todo: Todo = {
-      title: this.title
+      title: this.title,
+      completed: false
     };
     this.todoService.create(todo).subscribe(res => {
       this.todos.push(res);
